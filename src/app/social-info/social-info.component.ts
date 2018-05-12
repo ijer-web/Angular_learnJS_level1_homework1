@@ -9,8 +9,6 @@ export class SocialInfoComponent {
 
   @Input() public selectedRecreation: Recreation;
 
-  constructor() { }
-
   public get title(): string {
     return (this.selectedRecreation) ? this.selectedRecreation.social_info.title.toString() : '';
   }

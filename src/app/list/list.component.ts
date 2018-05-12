@@ -16,9 +16,6 @@ export class ListComponent {
   public applyFilterIndicator: boolean = false;
   private selectedRecreation: Recreation;
 
-  public constructor() {
-  }
-
   public getSelectedRecreation(): Recreation {
     return this.selectedRecreation;
   }
