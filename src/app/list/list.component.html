@@ -1,5 +1,5 @@
 <div class="element-bg-img">
-  <img *ngIf="getSelectedRecreation(); else wallpaper" src="{{getSelectedRecreation().img1}}" alt="" class="img-responsive">
+  <img *ngIf="selectedRecreation; else wallpaper" src="{{selectedRecreation?.img1}}" alt="" class="img-responsive">
 
   <ng-template #wallpaper>
       <img src="assets/images/default.jpg" alt="">

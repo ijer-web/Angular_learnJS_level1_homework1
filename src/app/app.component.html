@@ -5,8 +5,8 @@
     <app-list #selected="recreationsList"></app-list>
   </div>
   <div class="element-right">
-    <app-weather [selectedRecreation]="selected.getSelectedRecreation()"></app-weather>
-    <app-social-info [selectedRecreation]="selected.getSelectedRecreation()"></app-social-info>
+    <app-weather [selectedRecreation]="selected.selectedRecreation"></app-weather>
+    <app-social-info [selectedRecreation]="selected.selectedRecreation"></app-social-info>
   </div>
   <div class="clear"> </div>
 </div>
