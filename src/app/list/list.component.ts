@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { recreation$ } from '../data/index';
 import { Observable } from 'rxjs/Observable';
 import { RecreationService } from '../common/services/recreation-service.service';
@@ -10,14 +10,14 @@ import { RecreationService } from '../common/services/recreation-service.service
   exportAs: 'recreationsList'
 
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
 
   public recreations$: Observable<Recreation[]> = recreation$;
   public filterList: string[] = [];
   public applyFilterIndicator: boolean = false;
-  private selectedRecreation: Recreation;
+  public selectedRecreation: Recreation;
 
-  private constructor (private _recreationServiceService: RecreationService) {
+  public constructor( private _recreationServiceService: RecreationService) {
   }
 
   public ngOnInit(): void {
