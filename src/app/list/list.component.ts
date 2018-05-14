@@ -25,6 +25,7 @@ export class ListComponent {
     this.recreations$.subscribe((recreations: Recreation[]) => {
       this.selectedRecreation = recreations[0];
     });
+
   }
 
   public toggleFilter(filterName: string): void {
