@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { recreation$ } from '../data/index';
 import { Observable } from 'rxjs/Observable';
+import { RecreationService } from '../common/services/recreation-service.service';
 
 @Component({
   selector: 'app-list',
@@ -14,10 +15,17 @@ export class ListComponent {
   public recreations$: Observable<Recreation[]> = recreation$;
   public filterList: string[] = [];
   public applyFilterIndicator: boolean = false;
-  private selectedRecreation: Recreation;
+  public selectedRecreation: Recreation;
 
-  public getSelectedRecreation(): Recreation {
-    return this.selectedRecreation;
+  public constructor( private _recreationServiceService: RecreationService) {
+  }
+
+  public ngOnInit(): void {
+    this.recreations$ = this._recreationServiceService.getRecreations();
+    this.recreations$.subscribe((recreations: Recreation[]) => {
+      this.selectedRecreation = recreations[0];
+    });
+
   }
 
   public toggleFilter(filterName: string): void {
